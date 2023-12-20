@@ -121,6 +121,10 @@ nvm use
 ```
 
 ```bash
+npm run install:all
+```
+
+```bash
 npm run seed
 ```
 
