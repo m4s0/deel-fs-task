@@ -1,0 +1,14 @@
+# Runtime data
+.vscode
+.idea
+dist/
+package-lock.json
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache

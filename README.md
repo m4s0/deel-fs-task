@@ -107,3 +107,25 @@ It would be great for example if you'd write some unit test / simple frontend de
 When you have finished the assignment, zip your repo (make sure to include .git folder) and send us the zip.
 
 Thank you and good luck! 🙏
+
+## Installation and Use
+
+In order to use the server and client applications, run the following commands
+
+```bash
+nvm install
+```
+
+```bash
+nvm use
+```
+
+```bash
+npm run seed
+```
+
+```bash
+npm run start
+```
+
+then open the browser at http://localhost:5173/
