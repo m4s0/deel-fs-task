@@ -3,6 +3,10 @@ import { Contract } from './Contract'
 
 @Table
 export class Profile extends Model {
+  @Column({
+    primaryKey: true,
+  })
+  declare id: number
   @Column
   declare firstName: string
   @Column

@@ -8,8 +8,7 @@ export class UserController {
   constructor(protected profileRepository: ProfileRepository) {}
 
   async login(req: RequestInterface, res: Response): Promise<void> {
-    const { id } = req.body
-    const profile = await this.profileRepository.findOneById(Number(id))
+    const profile = await this.profileRepository.findOneById(Number(req.body?.id))
 
     if (profile === null) {
       res.status(401).end()

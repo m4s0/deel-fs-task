@@ -11,7 +11,7 @@ export class BalanceController {
 
   async deposit(req: RequestInterface, res: Response): Promise<void> {
     try {
-      const balance = await this.depositUseCase.execute(Number(req.body.amount), Number(req.params.profileId))
+      const balance = await this.depositUseCase.execute(Number(req.body?.amount), Number(req.params?.profileId))
       res.status(201).json('your balance is ' + balance)
     } catch (error: unknown) {
       if (error instanceof LogicException) {

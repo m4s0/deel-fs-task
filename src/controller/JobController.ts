@@ -28,7 +28,7 @@ export class JobController {
 
   async payForJob(req: RequestInterface, res: Response): Promise<void> {
     try {
-      await this.payForJobUseCase.execute(Number(req.params.jobId), req.profile)
+      await this.payForJobUseCase.execute(Number(req.params?.jobId), req.profile)
       res.status(201).json('payment has been made successfully')
     } catch (error: unknown) {
       if (error instanceof LogicException) {

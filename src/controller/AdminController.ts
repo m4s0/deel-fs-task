@@ -14,27 +14,31 @@ export class AdminController {
   ) {}
 
   async getBestProfession(req: RequestInterface, res: Response): Promise<void> {
-    if (req.query.start === undefined || req.query.end === undefined) {
+    const start = req.query?.start
+    const end = req.query?.end
+    if (start === undefined || end === undefined) {
       res.status(400).json('start and end is required')
     }
 
     const result = await this.profileRepository.findProfileThatEarnedTheMost(
-      new Date(String(req.query.start)),
-      new Date(String(req.query.end)),
+      new Date(String(start)),
+      new Date(String(end)),
     )
 
     handleResponseHelper(result, res)
   }
 
   async getBestClients(req: RequestInterface, res: Response): Promise<void> {
-    if (req.query.start === undefined || req.query.end === undefined) {
+    const start = req.query?.start
+    const end = req.query?.end
+    if (start === undefined || end === undefined) {
       res.status(400).json('start and end is required')
     }
 
     const jobs = await this.jobRepository.findJobsThatPayTheMost(
-      new Date(String(req.query.start)),
-      new Date(String(req.query.end)),
-      Number(req.query.limit),
+      new Date(String(start)),
+      new Date(String(end)),
+      Number(req.query?.limit),
     )
     const result = transformJobsToBestClients(jobs)
 

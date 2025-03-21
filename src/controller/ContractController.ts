@@ -9,7 +9,7 @@ export class ContractController {
   constructor(private readonly contractRepository: ContractRepository) {}
 
   async getContractById(req: RequestInterface, res: Response): Promise<void> {
-    const result = await this.contractRepository.findOneByIdAndProfileId(Number(req.params.id), req.profile.id)
+    const result = await this.contractRepository.findOneByIdAndProfileId(Number(req.params?.id), req.profile.id)
 
     handleResponseHelper(result, res)
   }
